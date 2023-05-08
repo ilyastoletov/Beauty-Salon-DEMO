@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.appninjas.beautysalonprototype.presentation.screens.main.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_reviewFragment2"
+            app:destination="@id/reviewFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_galleryFragment2"
+            app:destination="@id/galleryFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_appointmentFragment2"
+            app:destination="@id/appointmentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/appointmentFragment"
+        android:name="com.appninjas.beautysalonprototype.presentation.screens.appointment.AppointmentFragment"
+        android:label="AppointmentFragment"
+        tools:layout="@layout/fragment_appointment"/>
+    <fragment
+        android:id="@+id/galleryFragment"
+        android:name="com.appninjas.beautysalonprototype.presentation.screens.gallery.GalleryFragment"
+        android:label="GalleryFragment"
+        tools:layout="@layout/fragment_gallery"/>
+    <fragment
+        android:id="@+id/reviewFragment"
+        android:name="com.appninjas.beautysalonprototype.presentation.screens.review.ReviewFragment"
+        android:label="ReviewFragment"
+        tools:layout="@layout/fragment_review"/>
+</navigation>
