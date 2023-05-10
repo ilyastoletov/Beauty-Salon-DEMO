@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "449869693511",
+    "project_id": "beauty-salon-demo-4b0fd",
+    "storage_bucket": "beauty-salon-demo-4b0fd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:449869693511:android:dad63c8ebc1a931f9e2762",
+        "android_client_info": {
+          "package_name": "com.appninjas.beautysalonprototype"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "449869693511-s0b6vtaun2rheprukl4ltlts4hkbuo91.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDfLVblJGEse9N6Y7D5voAHUK9xcOmIV3Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "449869693511-s0b6vtaun2rheprukl4ltlts4hkbuo91.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
