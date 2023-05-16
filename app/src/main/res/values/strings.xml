@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Beauty Salon</string>
+    <array name="service_name">
+        <item>Выберите услугу</item>
+        <item>Мужская стрижка</item>
+        <item>Женская стрижка</item>
+        <item>Окрашивание волос</item>
+        <item>Маникюр</item>
+    </array>
 </resources>

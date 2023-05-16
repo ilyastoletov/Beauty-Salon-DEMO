@@ -1,9 +1,12 @@
 package com.appninjas.beautysalonprototype.presentation.di
 
+import com.appninjas.data.mapper.AppointmentMapper
 import com.appninjas.data.mapper.DiscountMapper
 import com.appninjas.data.mapper.NewsMapper
+import com.appninjas.data.repository.AppointmentRepoImpl
 import com.appninjas.data.repository.DiscountRepoImpl
 import com.appninjas.data.repository.NewsRepoImpl
+import com.appninjas.domain.repository.AppointmentRepository
 import com.appninjas.domain.repository.DiscountRepository
 import com.appninjas.domain.repository.NewsRepository
 import com.google.firebase.firestore.FirebaseFirestore
@@ -33,6 +36,12 @@ class DataModule {
     @Singleton
     fun provideNewsRepository(firestore: FirebaseFirestore): NewsRepository {
         return NewsRepoImpl(firebaseFirestore = firestore, mapper = NewsMapper())
+    }
+
+    @Provides
+    @Singleton
+    fun provideAppointmentRepo(firestore: FirebaseFirestore): AppointmentRepository {
+        return AppointmentRepoImpl(firestore = firestore, mapper = AppointmentMapper())
     }
 
 }

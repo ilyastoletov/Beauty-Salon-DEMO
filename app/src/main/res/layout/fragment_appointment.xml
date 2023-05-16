@@ -2,16 +2,160 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/grey_background">
+
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Appointment Fragment"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:fontFamily="@font/roboto_medium"
+        android:textSize="22sp"
+        android:textColor="@color/black"
+        android:text="Запись"
+        app:layout_constraintStart_toStartOf="@id/guideline_vertical_start"
+        app:layout_constraintEnd_toEndOf="@id/guideline_vertical_end"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintBottom_toBottomOf="@id/guideline_content_start"/>
+
+
+    <EditText
+        android:id="@+id/name_appointment_editText"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        app:layout_constraintStart_toStartOf="@id/guideline_vertical_start"
+        app:layout_constraintEnd_toEndOf="@id/guideline_vertical_end"
+        app:layout_constraintTop_toTopOf="@id/guideline_content_start"
+        android:hint="Имя"
+        android:textColorHint="@color/dark_grey"
+        android:textColor="@color/black"
+        android:inputType="text"
+        android:background="@drawable/edit_text_shape"
+        android:elevation="2dp"
+        android:padding="15dp" />
+
+    <EditText
+        android:id="@+id/phone_appointment_editText"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        app:layout_constraintStart_toStartOf="@id/guideline_vertical_start"
+        app:layout_constraintEnd_toEndOf="@id/guideline_vertical_end"
+        app:layout_constraintTop_toBottomOf="@id/name_appointment_editText"
+        android:hint="Телефон"
+        android:textColorHint="@color/dark_grey"
+        android:textColor="@color/black"
+        android:inputType="phone"
+        android:background="@drawable/edit_text_shape"
+        android:elevation="2dp"
+        android:layout_marginTop="25dp"
+        android:padding="15dp" />
+
+    <Spinner
+        android:id="@+id/choose_service_spinner"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        app:layout_constraintStart_toStartOf="@id/guideline_vertical_start"
+        app:layout_constraintEnd_toEndOf="@id/guideline_vertical_end"
+        app:layout_constraintTop_toBottomOf="@id/phone_appointment_editText"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/edit_text_shape"
+        android:entries="@array/service_name"
+        android:padding="5dp" />
+
+    <LinearLayout
+        android:id="@+id/service_information_linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="@id/guideline_vertical_start"
+        app:layout_constraintEnd_toEndOf="@id/guideline_vertical_end"
+        app:layout_constraintTop_toBottomOf="@id/choose_service_spinner"
+        android:layout_marginTop="3dp"
+        android:layout_marginStart="7dp">
+
+        <TextView
+            android:id="@+id/service_price_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_regular"
+            android:textSize="14sp"
+            android:textColor="@color/dark_grey"
+            android:text="Стоимость услуги: 450₽" />
+
+        <TextView
+            android:id="@+id/service_duration_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_regular"
+            android:textSize="14sp"
+            android:textColor="@color/dark_grey"
+            android:text="Время оказания услуги: 45 мин." />
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/choose_date_editText"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        app:layout_constraintStart_toStartOf="@id/guideline_vertical_start"
+        app:layout_constraintEnd_toEndOf="@id/guideline_vertical_end"
+        app:layout_constraintTop_toBottomOf="@id/service_information_linearLayout"
+        android:layout_marginTop="25dp"
+        android:textColorHint="@color/dark_grey"
+        android:background="@drawable/edit_text_shape"
+        android:hint="Выберите дату"
+        android:inputType="datetime"
+        android:padding="12dp"
+        />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/save_appointment_button"
+        android:layout_width="200dp"
+        android:layout_height="55dp"
+        app:layout_constraintStart_toStartOf="@id/guideline_vertical_start"
+        app:layout_constraintEnd_toEndOf="@id/guideline_vertical_end"
+        app:layout_constraintTop_toBottomOf="@id/choose_date_editText"
+        android:layout_marginTop="25dp"
+        app:cardBackgroundColor="@color/dark_grey"
+        app:cardCornerRadius="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Записаться"
+            android:layout_gravity="center"
+            android:textColor="@color/white"
+            android:textSize="15sp"/>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_vertical_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_vertical_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.95"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_content_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.15"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_content_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.8"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
