@@ -2,6 +2,8 @@ package com.appninjas.beautysalonprototype.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import androidx.navigation.NavDestination
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
@@ -32,6 +34,14 @@ class MainActivity : AppCompatActivity() {
 
         setupActionBarWithNavController(navController, appBarConf)
         btNav.setupWithNavController(navController)
+
+        navController.addOnDestinationChangedListener { _, nd: NavDestination, _ ->
+            if (nd.id == R.id.addReviewFragment) {
+                btNav.visibility = View.GONE
+            } else {
+                btNav.visibility = View.VISIBLE
+            }
+        }
     }
 
 }

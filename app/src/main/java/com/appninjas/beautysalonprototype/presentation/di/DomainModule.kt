@@ -3,10 +3,8 @@ package com.appninjas.beautysalonprototype.presentation.di
 import com.appninjas.domain.repository.AppointmentRepository
 import com.appninjas.domain.repository.DiscountRepository
 import com.appninjas.domain.repository.NewsRepository
-import com.appninjas.domain.usecase.GetDiscountImagesUseCase
-import com.appninjas.domain.usecase.GetNewsUseCase
-import com.appninjas.domain.usecase.GetServicePriceUseCase
-import com.appninjas.domain.usecase.SaveAppointmentUseCase
+import com.appninjas.domain.repository.ReviewsRepository
+import com.appninjas.domain.usecase.*
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -32,6 +30,11 @@ class DomainModule {
     @Provides
     fun provideGetServicePriceUseCase(repository: AppointmentRepository): GetServicePriceUseCase {
         return GetServicePriceUseCase(repository)
+    }
+
+    @Provides
+    fun provideGetReviewsUseCase(repository: ReviewsRepository): GetReviewsUseCase {
+        return GetReviewsUseCase(repository)
     }
 
 }

@@ -2,6 +2,8 @@
 <resources>
     <color name="grey_background">#F8FAFF</color>
     <color name="light_grey">#D7D7D7</color>
+    <color name="text_grey">#989898</color>
+    <color name="golden_yellow">#FFB81C</color>
     <color name="dark_grey">#383838</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:layout_marginTop="15dp"
+        app:cardElevation="0dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="20dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/reviewer_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Виталий"
+                android:layout_marginBottom="5dp"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@id/content_padding_start"
+                app:layout_constraintBottom_toBottomOf="@id/hor_top"
+                android:fontFamily="@font/roboto_medium"
+                android:textColor="@color/text_grey"/>
+
+            <RatingBar
+                android:id="@+id/review_rating_bar"
+                android:layout_width="80dp"
+                android:layout_height="20dp"
+                style="?android:attr/ratingBarStyleSmall"
+                android:numStars="5"
+                android:stepSize="0.1"
+                android:layout_marginBottom="5dp"
+                android:progressBackgroundTint="@color/golden_yellow"
+                android:rating="5"
+                app:layout_constraintEnd_toEndOf="@id/content_padding_end"
+                app:layout_constraintBottom_toBottomOf="@id/hor_top"
+                android:fontFamily="@font/roboto_regular"
+                android:textColor="@color/text_grey"/>
+
+            <TextView
+                android:id="@+id/review_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="16-05-2023"
+                android:textSize="13sp"
+                app:layout_constraintStart_toStartOf="@id/content_padding_start"
+                app:layout_constraintTop_toTopOf="@id/hor_bottom"
+                android:fontFamily="@font/roboto_regular"
+                android:textColor="@color/text_grey"/>
+
+            <TextView
+                android:id="@+id/review_text"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:text="Был вождем ты и надеждой!\nА теперь ты наше знамя,\nНет, не смолкнут гитары,\nИх звон летит в поднебесье\nТы будешь жить в нашей песне\nКоманданте Че Гевара!\nВставай проклятьем заклейменный"
+                android:textSize="13sp"
+                android:maxLines="6"
+                app:layout_constraintStart_toStartOf="@id/content_padding_start"
+                app:layout_constraintEnd_toEndOf="@id/content_padding_end"
+                app:layout_constraintTop_toTopOf="@id/hor_top"
+                app:layout_constraintBottom_toBottomOf="@id/hor_bottom"
+                android:fontFamily="@font/roboto_regular"
+                android:textColor="@color/black"/>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/hor_top"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.22"/>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/hor_bottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.8" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/content_padding_start"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.05"/>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/content_padding_end"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.95"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>
