@@ -7,10 +7,10 @@ class ReviewMapper {
 
     fun documentsToReviewList(documentList: List<DocumentSnapshot>): ArrayList<Review> = documentList.map { t ->
         Review(
-            reviewerName = t["name"].toString(),
-            reviewDate = t["date"].toString(),
-            reviewRate = t["rate"].toString().toInt(),
-            reviewText = t["review"].toString()
+            reviewerName = t["reviewerName"].toString(),
+            reviewDate = t["reviewDate"].toString(),
+            reviewRate = t["reviewRate"].toString().toFloat(),
+            reviewText = t["reviewText"].toString()
         )
     }.toCollection(ArrayList())
 

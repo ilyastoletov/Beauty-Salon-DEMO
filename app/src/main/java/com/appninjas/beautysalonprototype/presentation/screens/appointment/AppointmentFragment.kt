@@ -6,11 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.appninjas.beautysalonprototype.R
 import com.appninjas.beautysalonprototype.databinding.FragmentAppointmentBinding
+import com.appninjas.beautysalonprototype.presentation.utils.Toast
 import com.appninjas.domain.model.Appointment
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -51,7 +51,7 @@ class AppointmentFragment : Fragment() {
                 date = dateEditText.text.toString()
             ))
 
-            Toast.makeText(requireContext(), "Запись добавлена", Toast.LENGTH_SHORT).show()
+            Toast.showToast(requireContext(), "Запись добавлена")
 
             nameEditText.text.clear()
             phoneEditText.text.clear()
@@ -60,10 +60,10 @@ class AppointmentFragment : Fragment() {
     }
 
     private fun validateFields(): Boolean = if (binding.nameAppointmentEditText.text.isEmpty() || binding.phoneAppointmentEditText.text.isEmpty() || binding.chooseDateEditText.text.isEmpty()) {
-            Toast.makeText(requireContext(), "Вы заполнили не все поля", Toast.LENGTH_SHORT).show()
+            Toast.showToast(requireContext(), "Вы заполнили не все поля")
             false
         } else if (binding.chooseServiceSpinner.selectedItem == "Выберите услугу") {
-            Toast.makeText(requireContext(), "Выберите услугу", Toast.LENGTH_SHORT).show()
+            Toast.showToast(requireContext(), "Выберите услугу")
             false
         } else {
             true

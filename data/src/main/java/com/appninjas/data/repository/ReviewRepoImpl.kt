@@ -5,11 +5,14 @@ import com.appninjas.domain.model.Review
 import com.appninjas.domain.repository.ReviewsRepository
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.coroutines.tasks.await
+import kotlin.random.Random
 
 class ReviewRepoImpl(private val firestore: FirebaseFirestore, private val mapper: ReviewMapper) : ReviewsRepository {
 
     override suspend fun addReview(review: Review) {
-        TODO("Not yet implemented")
+        firestore.collection("reviews")
+            .document("${review.reviewDate}_${Random.nextInt()}")
+            .set(review)
     }
 
     override suspend fun getReviews(): ArrayList<Review> {

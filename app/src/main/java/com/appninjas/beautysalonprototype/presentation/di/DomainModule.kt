@@ -37,4 +37,9 @@ class DomainModule {
         return GetReviewsUseCase(repository)
     }
 
+    @Provides
+    fun provideAddReviewUseCase(repository: ReviewsRepository): AddReviewUseCase {
+        return AddReviewUseCase(repository)
+    }
+
 }
