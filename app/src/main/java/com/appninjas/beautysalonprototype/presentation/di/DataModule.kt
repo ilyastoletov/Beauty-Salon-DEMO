@@ -1,17 +1,8 @@
 package com.appninjas.beautysalonprototype.presentation.di
 
-import com.appninjas.data.mapper.AppointmentMapper
-import com.appninjas.data.mapper.DiscountMapper
-import com.appninjas.data.mapper.NewsMapper
-import com.appninjas.data.mapper.ReviewMapper
-import com.appninjas.data.repository.AppointmentRepoImpl
-import com.appninjas.data.repository.DiscountRepoImpl
-import com.appninjas.data.repository.NewsRepoImpl
-import com.appninjas.data.repository.ReviewRepoImpl
-import com.appninjas.domain.repository.AppointmentRepository
-import com.appninjas.domain.repository.DiscountRepository
-import com.appninjas.domain.repository.NewsRepository
-import com.appninjas.domain.repository.ReviewsRepository
+import com.appninjas.data.mapper.*
+import com.appninjas.data.repository.*
+import com.appninjas.domain.repository.*
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -51,6 +42,12 @@ class DataModule {
     @Singleton
     fun provideReviewRepo(firestore: FirebaseFirestore): ReviewsRepository {
         return ReviewRepoImpl(firestore = firestore, mapper = ReviewMapper())
+    }
+
+    @Provides
+    @Singleton
+    fun provideGalleryRepo(firestore: FirebaseFirestore): GalleryRepository {
+        return GalleryRepoImpl(firebaseFirestore = firestore, mapper = GalleryMapper())
     }
 
 }

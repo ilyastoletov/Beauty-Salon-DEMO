@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import androidx.navigation.NavDestination
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
@@ -23,6 +24,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setSupportActionBar(binding.toolbar)
+        checkExtras()
         initBottomNavigation()
     }
 
@@ -42,6 +44,11 @@ class MainActivity : AppCompatActivity() {
                 btNav.visibility = View.VISIBLE
             }
         }
+    }
+
+    private fun checkExtras() {
+        val intentExtras = intent.extras ?: return
+        findNavController(R.id.nav_controller_fragment).navigate(R.id.galleryFragment)
     }
 
 }

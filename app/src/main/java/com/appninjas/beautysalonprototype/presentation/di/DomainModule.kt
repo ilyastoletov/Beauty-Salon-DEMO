@@ -1,9 +1,6 @@
 package com.appninjas.beautysalonprototype.presentation.di
 
-import com.appninjas.domain.repository.AppointmentRepository
-import com.appninjas.domain.repository.DiscountRepository
-import com.appninjas.domain.repository.NewsRepository
-import com.appninjas.domain.repository.ReviewsRepository
+import com.appninjas.domain.repository.*
 import com.appninjas.domain.usecase.*
 import dagger.Module
 import dagger.Provides
@@ -40,6 +37,11 @@ class DomainModule {
     @Provides
     fun provideAddReviewUseCase(repository: ReviewsRepository): AddReviewUseCase {
         return AddReviewUseCase(repository)
+    }
+
+    @Provides
+    fun provideGetGalleryUseCase(repository: GalleryRepository): GetGalleryUseCase {
+        return GetGalleryUseCase(repository = repository)
     }
 
 }

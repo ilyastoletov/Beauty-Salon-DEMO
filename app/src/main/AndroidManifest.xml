@@ -23,6 +23,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".presentation.screens.photo_viewer.ViewPhotoActivity"
+            android:theme="@style/Theme.Semi_transparent"/>
     </application>
 
 </manifest>

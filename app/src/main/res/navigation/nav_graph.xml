@@ -29,7 +29,8 @@
         android:id="@+id/galleryFragment"
         android:name="com.appninjas.beautysalonprototype.presentation.screens.gallery.GalleryFragment"
         android:label="GalleryFragment"
-        tools:layout="@layout/fragment_gallery"/>
+        tools:layout="@layout/fragment_gallery">
+    </fragment>
     <fragment
         android:id="@+id/reviewFragment"
         android:name="com.appninjas.beautysalonprototype.presentation.screens.review.ReviewFragment"
